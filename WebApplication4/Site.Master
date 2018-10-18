@@ -1,0 +1,188 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="WebApplication4.Site" %>
+
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title>Dsnl HMO Manager</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style3
+        {
+            color: #FFFFFF;
+            padding: 8px 0px 0px 0px;
+            text-align: center;
+            line-height: normal;
+            font-size: xx-small;
+            width: 958px;
+            background-image: url('/Medias/img01.gif');
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0px;
+        }
+        .auto-style1 {
+            height: 16px;
+        }
+    </style>
+</head>
+<body id="ms1" style="background-color: #666666">
+    <form runat="server" style="background-color: #666666; margin-top: 0px;">
+    <div class="page" style="border: medium ridge #000000;">
+        <div class="header" style="background-color: #FFFFFF; top: 0px; left: 0px; height: 146px;">
+            <div class="title" 
+                
+                style="background-image: url('/Medias/img01.gif'); height: 98px; background-color: #FFFFFF; margin-top: 0px;">
+                <div style="width: 617px; height: 96px; background-color: #FFFFFF;">
+                    <div style="width: 160px; height: 96px; background-color: #FFFFFF; margin-left: 40px;">
+                        <asp:Image ID="imgupload" runat="server" Height="90px" ImageAlign="Middle" ImageUrl="~/images/Companylogo.jpg" style="margin-left: 44px; margin-top: 5px;" Width="105px" />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                    <div style="width: 396px; margin-left: 210px; margin-top: -90px; height: 93px; margin-right: -10px">
+                        <asp:Label ID="company" runat="server" Font-Bold="True" Font-Size="Large" ForeColor="Black" Height="47px" Width="259px" style="margin-top: 0px"></asp:Label>
+                        <br />
+                        <asp:Label ID="address" runat="server" Font-Bold="True" Font-Size="X-Small" ForeColor="Black" Height="16px" Width="392px"></asp:Label>
+                        <br />
+                        <asp:Label ID="Address2" runat="server" Font-Bold="True" Font-Size="X-Small" ForeColor="Black" Height="16px" Width="392px"></asp:Label>
+                        <br />
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </div>
+                <div style="margin-left: 615px; margin-top: -90px; height: 89px; width: 273px; background-color: #FFFFFF;">
+                    <br />
+                    &nbsp;&nbsp;&nbsp;<asp:Label ID="Label6" runat="server" Font-Bold="True" Font-Size="X-Small" ForeColor="Black" Text="Welcome : "></asp:Label>
+                    <asp:Label ID="loginname" runat="server" Font-Bold="True" Font-Size="X-Small" ForeColor="Maroon"></asp:Label>
+                    <br />
+                    &nbsp;&nbsp;&nbsp;<asp:LinkButton ID="LinkButton1" runat="server" Font-Size="X-Small" ForeColor="Black">Sign Out</asp:LinkButton>
+&nbsp;<asp:Label ID="Label11" runat="server" ForeColor="Black" Text="|"></asp:Label>
+&nbsp;<asp:HyperLink ID="HyperLink2" runat="server" Font-Size="X-Small" ForeColor="Black" NavigateUrl="~/adminlogin.aspx">User login </asp:HyperLink>
+&nbsp;<br />
+                    &nbsp;&nbsp;&nbsp;<asp:Label ID="Label15" runat="server" Font-Bold="True" ForeColor="Maroon" Text="DSNL HMO Manager " Font-Names="Britannic Bold" Font-Size="X-Large"></asp:Label>
+                    <br />
+                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager>
+                    <br />
+                    <br />
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <asp:Menu ID="MarkersMenu" runat="server" CssClass="menu" EnableViewState="false" 
+                            IncludeStyleBlock="false" Orientation="Horizontal" BorderStyle="Groove">
+                            <DynamicMenuItemStyle Font-Size="X-Small" />
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" />
+                                <asp:MenuItem Text="System Setup" Selectable="False" Value="M1">
+                                    <asp:MenuItem Text="Company" Value="Company" 
+                                        NavigateUrl="~/company.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Bank Setup" Value="F9"></asp:MenuItem>
+                                    <asp:MenuItem Text="Department" Value="F3" ToolTip="Department"></asp:MenuItem>
+                                    <asp:MenuItem Text="Position" Value="F5" ToolTip="Position">
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text="Grade Level" Value="F4" ToolTip="Grade Level">
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text="Area" Value="F12" ToolTip="Area"></asp:MenuItem>
+                                    <asp:MenuItem Text="LGA" Value="F2" ToolTip="LGA"></asp:MenuItem>
+                                    <asp:MenuItem Text="State of Origin" Value="F13" ToolTip="State of Origin"></asp:MenuItem>
+                                    <asp:MenuItem Text="Country" Value="F11" ToolTip="Country"></asp:MenuItem>
+                                    <asp:MenuItem Text="Category" Value="F8"></asp:MenuItem>
+                                    <asp:MenuItem Text="GL Code" Value="F36" ToolTip="GL Code"></asp:MenuItem>
+                                    <asp:MenuItem Text="Branch" Value="F6" ToolTip="Branch"></asp:MenuItem>
+                                    <asp:MenuItem Text="PFA/CFA" Value="F9" ToolTip="PFA/CFA"></asp:MenuItem>
+                                    <asp:MenuItem Text="Medical" Value="Medical" Selectable="False">
+                                        <asp:MenuItem Text="Sector Type" ToolTip="Sector Type" Value="F12"></asp:MenuItem>
+                                        <asp:MenuItem Text="Health Care Plan" ToolTip="Health Care Plan"></asp:MenuItem>
+                                        <asp:MenuItem Text="Provider Network" ToolTip="Provider Network" Value="F14"></asp:MenuItem>
+                                        <asp:MenuItem Text="HCP Service Network" ToolTip="HCP Service Network"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Medical" Value="M2" Selectable="False" NavigateUrl="~/Default.aspx">
+                                    <asp:MenuItem Text="Authorisation Code Generator" NavigateUrl="~/treatmentauthorisation.aspx" ToolTip="Authorisation Code Generator"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Enrollee Registration" NavigateUrl="~/enrolleereg.aspx" ToolTip="Enrollee Registration" Value="M3">
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Import/Export Utility" ToolTip="Import/Export Utility" NavigateUrl="~/importexport.aspx" Value="M4"></asp:MenuItem>
+                                <asp:MenuItem Text="Administration" Selectable="False" NavigateUrl="~/Default.aspx" ToolTip="Administration">
+                                    <asp:MenuItem NavigateUrl="~/changepassword.aspx" Text="Change Password" Value="Change Password"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Account Management" Value="M5" Selectable="False">
+                                        <asp:MenuItem NavigateUrl="~/registerme.aspx" Text="Create Password" Value="Create Password"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/usersright.aspx" Text="Users Right" Value="User Right"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text="Settings" Value="Settings"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Report" Value="M6" NavigateUrl="~/Default.aspx" Selectable="False">
+                                    <asp:MenuItem Text="Enrollee Listing Report" Value="Enrollee Listing Report" NavigateUrl="~/enrolleereport.aspx"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/authorisationcoderpt.aspx" Text="Treament Authorisation Listing Report" Value="Treament Authorisation Listing Report"></asp:MenuItem>
+                                </asp:MenuItem>
+                            </Items>
+                        </asp:Menu>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <p>
+                    &nbsp;</p>
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="style3" style="border: medium ridge #000000; background-color: #FFFFFF; height: 76px;">
+        
+        <table style="width: 95%; height: 67px; margin-left: 24px;">
+            <tr>
+                <td class="auto-style1"></td>
+                <td class="auto-style1"></td>
+                <td class="auto-style1"></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Label ID="Label16" runat="server" Font-Bold="True" Font-Size="Small" ForeColor="Black" Text="Copyright © "></asp:Label>
+&nbsp;<asp:Label ID="year" runat="server" Font-Bold="True" Font-Size="Small" ForeColor="Black" Text="year"></asp:Label>
+&nbsp;
+                    <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Small" ForeColor="Black" Text="Ultimate Health Management Services Ltd"></asp:Label>
+&nbsp;
+                    <asp:Image ID="Image3" runat="server" Height="16px" ImageAlign="Middle" ImageUrl="~/images/data_sciences_logo.jpg" Width="29px" />
+&nbsp;
+                    <asp:Label ID="Label14" runat="server" ForeColor="Black" Text="|"></asp:Label>
+&nbsp;
+                    <asp:HyperLink ID="HyperLink3" runat="server" Font-Size="X-Small" ForeColor="Black" NavigateUrl="~/contactus.aspx">Contact Us</asp:HyperLink>
+&nbsp;<asp:Label ID="Label13" runat="server" ForeColor="Black" Text="|"></asp:Label>
+&nbsp;
+                    <asp:HyperLink ID="HyperLink4" runat="server" Font-Size="X-Small" ForeColor="Black" NavigateUrl="~/contactus.aspx">FAQ</asp:HyperLink>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+        </div>
+    </form>
+</body>
+</html>
